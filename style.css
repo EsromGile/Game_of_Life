@@ -51,7 +51,7 @@ a {
 /* The actual popup */
 .popup .popuptext {
 	visibility: hidden;
-	width: 500px;
+	width: 300px;
 	background-color: goldenrod;
 	color: black;
 	text-align: center;
@@ -61,7 +61,7 @@ a {
 	z-index: 1;
 	bottom: 125%;
 	left: 50%;
-	margin-left: -250px;
+	margin-left: -150px;
 }
 
 /* Popup arrow */
