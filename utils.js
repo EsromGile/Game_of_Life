@@ -46,7 +46,7 @@ function gameLoop() {
 	if (isLooping) {
 		update();
 		console.log(turn);
-		window.setTimeout(gameLoop, 500);
+		window.setTimeout(gameLoop, 250);
 	} else {
 		return;
 	}
