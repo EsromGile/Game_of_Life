@@ -24,6 +24,8 @@ function clearCanvas() {
 	}
 
 	turn = updateTurn(0);
+	const text = document.getElementById("playPause");
+	text.innerHTML = '<i class="fa fa-play-circle"></i> Play';
 	draw();
 }
 
