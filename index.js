@@ -9,6 +9,7 @@ canvas.width = window.innerWidth - (window.innerWidth % 20) - 160;
 const BOX_SIZE = 20;
 let WIDTH = canvas.width / BOX_SIZE;
 let HEIGHT = canvas.height / BOX_SIZE;
+let RAND_RANGE = 25;
 
 // inialize guiding variables
 let isLooping = false;
@@ -73,6 +74,14 @@ function draw() {
 function update() {
 	composite.updateCells();
 	nextTurn();
+	draw();
+}
+
+let slider = document.getElementById("myRange");
+let value = document.getElementById("myValue");
+slider.oninput = function () {
+	value.innerHTML = this.value + '%';
+	RAND_RANGE = this.value;
 	draw();
 }
 

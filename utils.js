@@ -1,3 +1,4 @@
+const { output } = require("react-start/webpack.config");
 
 function myClick(evt) {
 	var rect = canvas.getBoundingClientRect();
@@ -60,4 +61,20 @@ function togglePopup() {
 
 	var popup = document.getElementById("myPopup");
 	popup.classList.toggle("show");
+}
+
+function generateBoard() {
+
+	clearCanvas();
+
+	for (let i = 0; i < WIDTH; i++) {
+		for (let j = 0; j < HEIGHT; j++) {
+
+			let rand = Math.floor(Math.random() * 100 / RAND_RANGE);
+			if (rand % RAND_RANGE == 0) 
+				composite.cells[i][j].isAlive = true;
+		}
+	}
+
+	draw();
 }

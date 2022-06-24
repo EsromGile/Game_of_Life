@@ -49,6 +49,11 @@ a {
 	user-select: none;
 }
 
+.popup li {
+	text-align: left;
+	margin-top: 15px;
+}
+
 /* The actual popup */
 .popup .popuptext {
 	visibility: hidden;
@@ -57,7 +62,7 @@ a {
 	color: black;
 	text-align: center;
 	border-radius: 6px;
-	padding: 8px 0;
+	padding: 8px;
 	position: absolute;
 	z-index: 1;
 	bottom: 125%;
@@ -102,3 +107,35 @@ a {
 		opacity: 1;
 	}
 }
+
+.slider {
+	-webkit-appearance: none;
+	margin-top: 10px;
+	margin-right: 10px;
+	width: 75%;
+	height: 15px;
+	border-radius: 5px;  
+	background: lightgray;
+	outline: none;
+	opacity: 0.8;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%; 
+	background: gray;
+	cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: black;
+	cursor: pointer;
+  }
