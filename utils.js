@@ -1,5 +1,3 @@
-const { output } = require("react-start/webpack.config");
-
 function myClick(evt) {
 	var rect = canvas.getBoundingClientRect();
 	let x = Math.floor((evt.clientX - rect.left) / BOX_SIZE);
