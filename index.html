@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="dna.png"
+		<link rel="icon" href="dna.png">
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,76 +19,46 @@
 		<title>Conway's Game of Life</title>
 	</head>
 	<body>
-		<h2 class="center mt-4">John Conway's Game of Life</h2>
-
-		
-
-		<canvas id="canvas"></canvas>
-
-		<div class="content-box">
-			<div class="row">
-				<div class="col-2"></div>
-				<div class="col" align="center">
-					<div class="row"></div>
-					<button
-						id="playPause"
-						type="button"
-						class="btn btn-secondary"
-						onclick="toggleLoop()"
-					>
-						<i class="fa fa-play-circle"></i> Play
-					</button>
-					<button
-						type="button"
-						class="btn btn-secondary"
-						onclick="clearCanvas()"
-					>
-						<i class="fa fa-repeat"></i> Reset
-					</button>
-					<button type="button" class="btn btn-secondary popup" onclick="togglePopup()">
-						<i class="fa fa-info-circle"></i> Explanation<span class="popuptext" id="myPopup">
-
-							<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>
-							is a zero-player game developed by the mathematian John Conway in the 1970's. 
-							The rules of the game are as follows: <br/>
-
-							<ol>
-								<li>Any live cell with two or three live neighbours survives.</li>
-								<li>Any dead cell with three live neighbours becomes a live cell.</li>
-								<li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
-							</ol>
-
-							Select the cells that you would like to start with. Then, press play.
-
-						</span>
-					</button>
+		<div class="col container-e" align="center">
+			<h2 class="row pt-3">John Conway's Game of Life</h2>
+			<h4 class="mt-2" align="center" id="current-turn"><span class="white">Turn:</span> 0</h4>
+			<canvas class="row" id="canvas"></canvas>
+			
+			<div class="row container">
+				<button class="btn popup col-md" type="button" onclick="togglePopup()">
+					<i class="fa fa-info-circle"></i> Explanation<span class="popuptext" id="myPopup">
+						
+						<a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>
+						is a zero-player game developed by the mathematian John Conway in the 1970's. 
+						The rules of the game are as follows: <br/>
+						
+						<ol>
+							<li>Any live cell with two or three live neighbours survives.</li>
+							<li>Any dead cell with three live neighbours becomes a live cell.</li>
+							<li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
+						</ol>
+						
+						Select the cells that you would like to start with. Then, press play.
+						
+					</span>
+				</button>
+				<button class="btn col-md" type="button" onclick="generateBoard()">
+					<i class="fa fa-random" aria-hidden="true"></i> Random Board
+				</button>
+				<div class="slidecontainer col-md">
+					<input class="slider" type="range" min="5" max="55" value="25" id="myRange">
+					<span class="myValue" id="myValue"> 25% </span>
 				</div>
-				<div class="col">
-					<h4 class="mt-2 white-text center">
-						<p id="current-turn">
-							Turn: 0
-						</p>
-					</h4>
-				</div>
-				<div class="col" align="center">
-					<div class="row">
-						<div class="col" align="right">
-							<button type="button" class="btn btn-secondary" onclick="generateBoard()">
-								<i class="fa fa-random" aria-hidden="true"></i> Random Board
-							</button>
-						</div>
-						<div class="col" align="left">
-							<div class="slidecontainer">
-								<input type="range" min="5" max="55" value="25" class="slider" id="myRange">
-								<span class="myValue white-text" id="myValue"> 25% </span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-2"></div>
+				<button class="btn col-md" id="playPause" type="button" onclick="toggleLoop()"> 
+					<i class="fa fa-play-circle"></i> Play
+				</button>
+				<button class="btn col-md" type="button" onclick="clearCanvas()">
+					<i class="fa fa-repeat"></i> Reset
+				</button>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
 	<script src="classes.js"></script>
 	<script src="utils.js"></script>
 	<script src="index.js"></script>

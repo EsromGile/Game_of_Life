@@ -1,44 +1,78 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+/* ------------------------------- */
+/* ---------- General ------------ */
+/* ------------------------------- */
+:root {
+	--background: #e3dcd2;
+    --filler: #100c0d;
+    --wrong: #cc8b65;
+    --right: #076b55;
+    --highlight: #f4eee4;
+    --shadow: #171515;
 
+    --fade: linear-gradient(
+        to bottom right, 
+        var(--filler), 
+        var(--right)
+    );
+    --reverse-fade: linear-gradient(
+        to bottom right,  
+        var(--right), 
+        var(--filler)
+    );
+}
 body {
-	background-color: black;
-	overflow-x: hidden;
+    height: 100%;
+    background-attachment: fixed; 
+    /* For browsers that do not support gradients */
+    background-color: var(--background); 
+    background-image: var(--fade);
+    overflow-x: hidden;
 }
-
-button {
-	background-color: black !important;
+.container {
+	margin: 2%;
 }
-
+.container-e {
+	margin: 2%;
+    background-color: var(--background); 
+    background-image: var(--reverse-fade);
+    border-radius: 25px;
+    box-shadow: 10px 10px 8px var(--shadow);
+}
 h2 {
-	color: goldenrod !important;
+    color: var(--background);
+	justify-content: center;
+	text-shadow: 5px 5px 5px var(--shadow);
 }
-
-a {
-	color: gray !important;
+h4 {
+	color: var(--wrong);
+	text-shadow: 5px 5px 5px var(--shadow);
 }
-
+.white {
+	color: var(--background);
+	opacity: 0.7;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    margin-top: 100px;
+    left: 40%;
+}
 #canvas {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	display: block;
+	box-shadow: 10px 10px 8px var(--shadow);
 }
-
-.white-text {
-	color: white !important;
+.col {
+	margin-top: 30px;
 }
-
-.center {
-	color: gray;
-	font-family: Fira Code Retina;
-	text-align: center;
-}
-
+/* ------------------------------- */
+/* ------------ PopUp ------------ */
+/* ------------------------------- */
 .popup {
 	position: relative;
 	display: inline-block;
@@ -48,18 +82,18 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 }
-
 .popup li {
 	text-align: left;
 	margin-top: 15px;
 }
-
 /* The actual popup */
 .popup .popuptext {
 	visibility: hidden;
 	width: 300px;
-	background-color: goldenrod;
-	color: black;
+	backdrop-filter: blur(10px) saturate(70%);
+	background-color: #076b5562;
+	box-shadow: 4px 4px 4px var(--shadow);
+	color: var(--filler);
 	text-align: center;
 	border-radius: 6px;
 	padding: 8px;
@@ -69,7 +103,6 @@ a {
 	left: 50%;
 	margin-left: -150px;
 }
-
 /* Popup arrow */
 .popup .popuptext::after {
 	content: "";
@@ -81,14 +114,12 @@ a {
 	border-style: solid;
 	border-color: #555 transparent transparent transparent;
 }
-
 /* Toggle this class - hide and show the popup */
 .popup .show {
 	visibility: visible;
 	-webkit-animation: fadeIn 1s;
 	animation: fadeIn 1s;
 }
-
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
 	from {
@@ -98,7 +129,6 @@ a {
 		opacity: 1;
 	}
 }
-
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -107,10 +137,19 @@ a {
 		opacity: 1;
 	}
 }
-
+/* ------------------------------- */
+/* ----------- Slider ------------ */
+/* ------------------------------- */
+.slidecontainer {
+	margin-bottom: 20px;
+}
+.myValue {
+	color: var(--background);
+}
 .slider {
 	-webkit-appearance: none;
 	margin-top: 10px;
+	margin-bottom: 10px;
 	margin-right: 10px;
 	width: 75%;
 	height: 15px;
@@ -120,9 +159,8 @@ a {
 	opacity: 0.8;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
+}
+.slider::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	width: 25px;
@@ -130,12 +168,58 @@ a {
 	border-radius: 50%; 
 	background: gray;
 	cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
+} 
+.slider::-moz-range-thumb {
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
 	background: black;
 	cursor: pointer;
-  }
+}
+/* ------------------------------- */
+/* ----------- Buttons ----------- */
+/* ------------------------------- */
+button a {
+	text-decoration: none;
+	color: var(--highlight);
+}
+button a:hover {
+	text-decoration: underline;
+	color: var(--highlight);
+}
+.btn {
+    color: var(--background);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+	align-items: center;
+	padding: 0;
+    margin-left: 15px;
+	margin-right: 15px;
+    margin-bottom: 30px !important;
+    width: 200px;
+	max-width: 200px;
+	min-width: 200px;
+	height: 40px;
+	max-height: 40px;
+    background: linear-gradient(to bottom, 
+        #100c0d9d, 
+        #100c0d
+    ) !important;
+    box-shadow: 4px 4px 4px var(--shadow) !important; 
+
+}
+.btn:focus {
+    color: var(--background);
+    border-radius: 10px;
+    background-color: var(--filler);
+    border: none;
+}
+.btn:hover {
+    color: var(--filler) !important;
+    background: #e3dcd2 !important;
+}
+.btn:disabled {
+    color: gray;
+    border: transparent;
+}

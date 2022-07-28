@@ -7,7 +7,7 @@ function myClick(evt) {
 }
 
 function updateTurn(thisTurn) {
-	const text = "Turn: ";
+	const text = "<span class='white'>Turn: </span> ";
 	var currentTurn = document.getElementById("current-turn");
 	currentTurn.innerHTML = text + thisTurn;
 	return thisTurn;

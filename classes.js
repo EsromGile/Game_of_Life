@@ -24,7 +24,7 @@ class Cell {
 
 	drawCell() {
 		if (this.isAlive) {
-			ctx.fillStyle = "gold";
+			ctx.fillStyle = "#cc8b65";
 			ctx.fillRect(this.x, this.y, BOX_SIZE, BOX_SIZE);
 		}
 	}

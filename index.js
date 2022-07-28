@@ -2,8 +2,8 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
 // calculate the size of the canvas
-canvas.height = window.innerHeight - (window.innerHeight % 20) - 180;
-canvas.width = window.innerWidth - (window.innerWidth % 20) - 160;
+canvas.height = window.innerHeight - (window.innerHeight % 20) - 240;
+canvas.width = window.innerWidth - (window.innerWidth % 20) - 200;
 
 // set variable sizes
 const BOX_SIZE = 20;
@@ -27,8 +27,8 @@ function nextTurn() {
 
 function updateSize() {
 	// calculate the size of the canvas
-	canvas.height = window.innerHeight - (window.innerHeight % 20) - 180;
-	canvas.width = window.innerWidth - (window.innerWidth % 20) - 160;
+	canvas.height = window.innerHeight - (window.innerHeight % 20) - 240;
+	canvas.width = window.innerWidth - (window.innerWidth % 20) - 200;
 
 	// update variable sizes
 	WIDTH = canvas.width / BOX_SIZE;
@@ -48,14 +48,14 @@ function toggleListener() {
 
 function draw() {
 	//background
-	ctx.fillStyle = "gray";
+	ctx.fillStyle = "#e3dcd2";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 	//composite
 	composite.drawComposite();
 
 	//grid
-	ctx.strokeStyle = "black";
+	ctx.strokeStyle = "#100c0d";
 	ctx.lineWidth = 1;
 	for (let i = 0; i < WIDTH; i++) {
 		ctx.beginPath();
